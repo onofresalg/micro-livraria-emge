@@ -4,7 +4,7 @@
     "description": "Toy example of microservice",
     "main": "",
     "scripts": {
-        "start": "run-p start-frontend start-controller start-shipping start-inventory",
+        "start": "run-p start-frontend start-controller start-inventory",
         "start-controller": "nodemon services/controller/index.js",
         "start-shipping": "nodemon services/shipping/index.js",
         "start-inventory": "nodemon services/inventory/index.js",
@@ -12,17 +12,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/rodrigo-brito/shop-microservice.git"
+        "url": "git+https://github.com/onofresalg/micro-livraria-emge.git"
     },
-    "author": "Rodrigo",
+    "author": "Onofre Salgueiro",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/rodrigo-brito/shop-microservice/issues"
+        "url": "https://github.com/onofresalg/micro-livraria-emge/issues"
     },
-    "homepage": "https://github.com/rodrigo-brito/shop-microservice#readme",
+    "homepage": "https://github.com/onofresalg/micro-livraria-emge#readme",
     "dependencies": {
         "@grpc/grpc-js": "^1.2.6",
         "@grpc/proto-loader": "^0.5.6",
+        "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "google-protobuf": "^3.15.0-rc.1",

@@ -1,4 +1,6 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const shipping = require('./shipping');
 const inventory = require('./inventory');
 const cors = require('cors');
@@ -49,6 +51,28 @@ app.get('/product/:id', (req, res, next) => {
             res.status(500).send({ error: 'something failed :(' });
         } else {
             res.json(product);
+        }
+    });
+});
+
+app.put('/product/buy', bodyParser.json(), (req, res, next) => {
+    inventory.BuyProduct({ id: req.body.id, quantity: req.body.quantity }, (err, product) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ error: 'something failed :(' });
+        } else {
+            res.json({ message: product.message });
+        }
+    });
+});
+
+app.put('/product/add', bodyParser.json(), (req, res, next) => {
+    inventory.IncreaseProducts({ id: req.body.id, quantity: req.body.quantity }, (err, product) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ error: 'something failed :(' });
+        } else {
+            res.json({ message: product.message });
         }
     });
 });

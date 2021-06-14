@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Refactoring",
         "author": "Martin Fowler",
-        "quantity": 10,
+        "quantity": 0,
         "price": 79.92,
         "photo": "/img/refactoring.png"
     },
